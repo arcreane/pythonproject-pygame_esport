@@ -4,10 +4,12 @@ pygame.init()
 
 pygame.display.set_caption("Game")
 window = pygame.display.set_mode((600,385))
+window.fill((255,0,0))
 background_image = pygame.image.load('images/background.png')
 
 
 run = True
+
 
 while run:
 
@@ -18,3 +20,4 @@ while run:
         if event.type == pygame.QUIT:
             run = False
             pygame.quit()
+            print("test")
