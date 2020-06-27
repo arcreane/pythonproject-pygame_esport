@@ -9,14 +9,17 @@ pygame.display.set_caption("Game")
 window = pygame.display.set_mode((600,385))
 window.fill((255,0,0))
 background_image = pygame.image.load('images/background.png')
+white = (255, 255, 255)
+green = (0, 255, 0)
+blue = (0, 0, 180)
 
 run = True
 def creaTexteObj(texte, Police):
 	texteSurface = Police.render(texte, True,white)
 	return texteSurface, texteSurface.get_rect()
+
 def gameOver():
-    green = (0, 255, 0)
-    blue = (0, 0, 180)
+
     Text = pygame.font.Font("Cantarell - Regular.ttf", 150)
     text_surface_obj = Text.render('GAME OVER', True, green, blue)
     text_rect_obj = text_surface_obj.get_rect()
