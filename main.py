@@ -42,7 +42,7 @@ run = True
 
 while run:
 
-
+    pygame.key.set_repeat(500, 30)
     window.blit(background_image, (0, 0))
     window.blit(player, (playerPos.x,playerPos.y))
     window.blit(monster, (monsterPos.x, monsterPos.y))
@@ -58,13 +58,12 @@ while run:
 
             if event.key == pygame.K_RIGHT and playerPos.x < 500:
                 playerPos.x += 10
-                pygame.key.set_repeat(500, 30)
+
             elif event.key == pygame.K_SPACE and playerPos.y > 0:
                 playerPos.y -= 50
 
             elif event.key == pygame.K_LEFT and playerPos.x > 0:
                 playerPos.x -= 10
-                pygame.key.set_repeat(500, 30)
         elif event.type == pygame.KEYUP:
             if event.key == pygame.K_SPACE:
                 playerPos.y += 50
