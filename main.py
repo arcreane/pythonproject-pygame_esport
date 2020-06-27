@@ -10,12 +10,6 @@ window = pygame.display.set_mode((600,385))
 window.fill((255,0,0))
 background_image = pygame.image.load('images/background.png')
 
-
-
-
-
-
-
 run = True
 
 
@@ -27,17 +21,21 @@ while run:
     window.blit(monster, (monsterPos.x, monsterPos.y))
     window.blit(block, (blockPos.x, blockPos.y))
     pygame.display.flip()
+
     if playerPos.x == monsterPos.x and playerPos.y == 180:
         Monster.health = 0
+
     elif monsterPos.x != playerPos.x :
         monsterPos.x -= 0.1
+
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             run = False
             pygame.quit()
+
         elif event.type == pygame.KEYDOWN:
 
-            if event.key == pygame.K_RIGHT and playerPos.x < 500 and playerPos.x != blockPos.x - 75 and playerPos.y != blockPos.y:
+            if event.key == pygame.K_RIGHT and playerPos.x < 500 and playerPos.x < blockPos.x - 75:
                     playerPos.x += 10
                     player = pygame.image.load('images/marioright1.gif')
             elif event.key == pygame.K_SPACE and playerPos.y > 0:
@@ -46,6 +44,7 @@ while run:
             elif event.key == pygame.K_LEFT and playerPos.x > 0:
                 playerPos.x -= 10
                 player = pygame.image.load('images/marioleft1.gif')
+
         elif event.type == pygame.KEYUP:
             if event.key == pygame.K_SPACE:
                 playerPos.y += 100

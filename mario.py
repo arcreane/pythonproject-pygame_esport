@@ -11,3 +11,6 @@ class Player(pygame.sprite.Sprite):
         super().__init__()
         self.health = 10
         self.max_health = 10
+
+    def gravity(self):
+        self.movey += 3.2
