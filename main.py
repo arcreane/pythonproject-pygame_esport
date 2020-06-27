@@ -37,15 +37,15 @@ while run:
             pygame.quit()
         elif event.type == pygame.KEYDOWN:
 
-            if event.key == pygame.K_RIGHT and playerPos.x < 500:
-                if playerPos.x < blockPos.x - 75 and playerPos.y < blockPos.y:
+            if event.key == pygame.K_RIGHT and playerPos.x < 500 and playerPos.x != blockPos.x - 75 and playerPos.y != blockPos.y:
                     playerPos.x += 10
-
+                    player = pygame.image.load('images/marioright1.gif')
             elif event.key == pygame.K_SPACE and playerPos.y > 0:
                 playerPos.y -= 100
 
             elif event.key == pygame.K_LEFT and playerPos.x > 0:
                 playerPos.x -= 10
+                player = pygame.image.load('images/marioleft1.gif')
         elif event.type == pygame.KEYUP:
             if event.key == pygame.K_SPACE:
                 playerPos.y += 100
